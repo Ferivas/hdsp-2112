@@ -30,6 +30,8 @@
 
 /* Control Word: bits 0-2 = brillo (000 = 100%), resto en 0 = operacion normal */
 #define HDSP_CTRL_BRIGHT_100  0x00
+#define HDSP_CTRL_BRIGHT_53  0x02
+#define HDSP_CTRL_BRIGHT_13  0x06
 
 /* ----------------------------- Funciones ----------------------------------- */
 
@@ -96,7 +98,7 @@ void setup()
 
     /* Secuencia de inicializacion del display */
     hdsp_reset();
-    hdsp_write(HDSP_ADDR_CTRL, HDSP_CTRL_BRIGHT_100);   /* brillo 100% */
+    hdsp_write(HDSP_ADDR_CTRL, HDSP_CTRL_BRIGHT_13);   /* brillo 100% */
 
     Serial.println(F("Display inicializado. Iniciando barrido ASCII..."));
 }
